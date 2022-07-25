@@ -1,0 +1,32 @@
+:root {
+  --main-color: #e3e3e3;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-family: 'Quicksand', sans-serif;
+  font-size: 62.5%;
+}
+
+body {
+  background-color: var(--main-color);
+}
+
+.TodoListContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+  background-color: var(--main-color);
+}
+
+.TodoListContainer h1 {
+  margin: 3rem 0 3rem 0;
+  font-size: 3.6rem;
+  color: #676767;
+}

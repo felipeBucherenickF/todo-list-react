@@ -1,0 +1,13 @@
+@import url('./Global.css');
+
+.TodoSearch {
+  height: 4rem;
+  width: 32rem;
+  margin: 3rem 0 4rem;
+  padding-left: 2rem;
+  border: none;
+  border-radius: 0.8rem;
+  background-color: var(--main-color);
+  box-shadow: inset 5px 5px 10px #c1c1c1, inset -5px -5px 10px #ffffff;
+  outline-color: #0082dfc1;
+}
