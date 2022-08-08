@@ -1,11 +1,23 @@
+@import './Global.css';
+
 .CreateTodoButton {
+  position: absolute;
+  bottom: 5%;
+  place-items: center;
   width: 8rem;
   height: 8rem;
   margin-top: 2rem;
-  font-size: 2.8rem;
-  border: none;
   border-radius: 50%;
-  background: #e3e3e3;
-  box-shadow: 10px 10px 19px #c1c1c1, -10px -10px 19px #ffffff;
-  color: #0082dfc1;
+  background-color: #ffd76c;
+  opacity: 50%;
+  border: none;
+  font-size: 3.2rem;
+  font-weight: bold;
+  color: #3b4276;
+}
+
+.CreateTodoButton:hover {
+  scale: 1.08;
+  opacity: 80%;
+  transition: all ease 0.8s;
 }

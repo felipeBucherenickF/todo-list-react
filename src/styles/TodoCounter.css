@@ -1,4 +1,6 @@
+@import url('./Global.css');
+
 .TodoCounter {
   font-size: 2rem;
-  color: #676767;
+  color: var(--font-color);
 }

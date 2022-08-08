@@ -1,13 +1,24 @@
 @import url('./Global.css');
 
+.TodoSearch-container {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  width: 28rem;
+  margin: 3rem 0 4rem;
+}
 .TodoSearch {
   height: 4rem;
-  width: 32rem;
-  margin: 3rem 0 4rem;
+  width: 64%;
+  margin-left: 2rem;
   padding-left: 2rem;
   border: none;
   border-radius: 0.8rem;
-  background-color: var(--main-color);
-  box-shadow: inset 5px 5px 10px #c1c1c1, inset -5px -5px 10px #ffffff;
-  outline-color: #0082dfc1;
+  background-color: var(--font-color);
+  outline: none;
+  color: var(--main-color);
+}
+
+.TodoSearch::placeholder {
+  color: var(--main-color);
 }

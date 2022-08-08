@@ -1,5 +1,6 @@
 :root {
-  --main-color: #e3e3e3;
+  --main-color: #252648;
+  --font-color: #c4c7e4;
 }
 
 * {
@@ -14,6 +15,8 @@ html {
 }
 
 body {
+  display: flex;
+  justify-content: center;
   background-color: var(--main-color);
 }
 
@@ -21,6 +24,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: 38rem;
   height: 100%;
   background-color: var(--main-color);
 }
@@ -28,5 +32,5 @@ body {
 .TodoListContainer h1 {
   margin: 3rem 0 3rem 0;
   font-size: 3.6rem;
-  color: #676767;
+  color: #ffd76c;
 }

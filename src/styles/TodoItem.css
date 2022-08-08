@@ -1,3 +1,5 @@
+@import './Global.css';
+
 .TodoItem {
   display: flex;
   align-items: center;
@@ -8,16 +10,15 @@
   padding: 1rem 2rem;
   font-size: 1.5rem;
   border-radius: 1rem;
-  background: #e3e3e3;
-  box-shadow: 7px 7px 14px #c1c1c1, -7px -7px 14px #ffffff;
+  background-color: #2d325a;
+  color: var(--font-color);
 }
 
-.TodoItemButton {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.TodoItem:hover {
+  scale: 1.08;
+  transition: all ease 0.8s;
+}
+
+.TodoItemButton img {
   width: 2.4rem;
-  border-radius: 50px;
-  background: #e3e3e3;
-  box-shadow: inset 3px 3px 5px #c1c1c1, inset -3px -3px 5px #ffffff;
 }

@@ -2,11 +2,11 @@ import React from 'react';
 import { TodoItem } from './TodoItem';
 import '../styles/TodoList.css';
 
-function TodoList(props) {
+function TodoList({ searchedTodos }) {
   return (
     <ul className="TodoList">
-      {props.todos.map((item) => {
-        return <TodoItem item={item}></TodoItem>;
+      {searchedTodos.map((todo) => {
+        return <TodoItem todo={todo} key={todo.text}></TodoItem>;
       })}
     </ul>
   );
