@@ -1,4 +1,5 @@
 import React from 'react';
+import { useLocalStorage } from './hooks/useLocalStorage';
 
 import './styles/Global.css';
 import { TodoCounter } from './components/TodoCounter';
@@ -14,7 +15,7 @@ function App() {
     },
     {
       text: 'sleep for rest',
-      completed: true,
+      completed: false,
     },
     {
       text: 'eat my breakfast',
@@ -26,7 +27,7 @@ function App() {
     },
   ];
 
-  const [todos, setTodos] = React.useState(defaultTodos);
+  const { item: todos, saveItem: saveTodos, loading, error } = useLocalStorage('TODOS_V1', []);
   const [searchValue, setSearchValue] = React.useState('');
 
   const totalTodos = todos.length;
@@ -44,12 +45,31 @@ function App() {
     });
   }
 
+  const completeTodo = (text) => {
+    const todoIndex = todos.findIndex((todo) => todo.text === text);
+    const newTodos = [...todos];
+    newTodos[todoIndex].completed = !newTodos[todoIndex].completed;
+    saveTodos(newTodos);
+  };
+
+  const deleteTodo = (text) => {
+    const todoIndex = todos.findIndex((todo) => todo.text === text);
+    const newTodos = [...todos];
+    newTodos.splice(todoIndex, 1);
+    saveTodos(newTodos);
+  };
+
   return (
     <div className="TodoListContainer">
       <h1>TODO List</h1>
       <TodoCounter totalTodos={totalTodos} completedTodods={completedTodods} />
       <TodoSearch searchValue={searchValue} setSearchValue={setSearchValue} />
-      <TodoList searchedTodos={searchedTodos}></TodoList>
+
+      {error && <p>Error....</p>}
+      {loading && <p className="Loading">Loading........</p>}
+      {!loading && !searchedTodos.length && <p className="FirstTodo">Create your first TODO</p>}
+
+      <TodoList searchedTodos={searchedTodos} completeTodo={completeTodo} deleteTodo={deleteTodo}></TodoList>
       <CreateTodoButton />
     </div>
   );

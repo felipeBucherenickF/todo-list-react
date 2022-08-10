@@ -3,18 +3,24 @@ import check from '../assets/check.png';
 import cancel from '../assets/cancel.png';
 import '../styles/TodoItem.css';
 
-function TodoItem({ todo }) {
+function TodoItem({ todo, completeTodo, deleteTodo }) {
+  const onComplete = () => {
+    completeTodo(todo.text);
+  };
+  const onDelete = () => {
+    deleteTodo(todo.text);
+  };
   return (
     <li className="TodoItem">
-      <div className="TodoItemButton">
-        <img src={check} alt="TODO done" />
-      </div>
+      <button className="TodoItemButton" onClick={onComplete}>
+        <img className={`${todo.completed && 'TodoItemButtonCheck-completed'}`} src={check} alt="TODO done" />
+      </button>
 
-      <p>{todo.text}</p>
+      <p className={`${todo.completed && 'TodoItemText-completed'}`}>{todo.text}</p>
 
-      <div className="TodoItemButton">
+      <button className="TodoItemButton" onClick={onDelete}>
         <img src={cancel} alt="delete TODO" />
-      </div>
+      </button>
     </li>
   );
 }
