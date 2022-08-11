@@ -17,6 +17,7 @@ const useLocalStorage = (itemName, initialValue) => {
         } else {
           parsedItems = JSON.parse(localStorageItems);
         }
+
         setItem(parsedItems);
         setLoading(false);
       } catch (error) {
